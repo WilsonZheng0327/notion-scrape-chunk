@@ -12,3 +12,8 @@ Clone the repo with:
 \
 Download packages with: ```pip install -r requirements.txt```\
 Run main script with: ```python main.py```
+
+```get_notion_info()``` in *main.py* returns an array of chunks as required by the project\
+I've added an additional output that is *chunks.txt* that will have all the chunks saved to a text file with delimiters.
+
+*sample_output.txt* is what it would look like, also added for convenience. Running the script takes about 6 minutes.
