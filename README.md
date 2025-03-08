@@ -14,3 +14,5 @@ Run main script with: ```python main.py```
 I've added an additional output that is *chunks.txt* that will have all the chunks saved to a text file with delimiters.
 
 *sample_output.txt* is what it would look like, also added for convenience. Running the script takes about 6 minutes.
+
+There are intermediate outputs which I've added to the .gitignore files.
