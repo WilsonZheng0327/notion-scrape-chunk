@@ -4,6 +4,7 @@ from tqdm import tqdm
 import time
 
 def get_article_urls(url):
+    '''returns a sorted list of related urls to be scraped'''
 
     response = requests.get(url)
     if response.status_code != 200:
@@ -56,6 +57,8 @@ def get_article_urls(url):
     return sorted(unique_articles)
 
 def scrape_article(url):
+    '''returns a dictionary with information about the article given the url'''
+
     time.sleep(1)
     response = requests.get(url)
     article_soup = BeautifulSoup(response.content, 'html.parser')

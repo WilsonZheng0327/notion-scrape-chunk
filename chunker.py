@@ -2,7 +2,7 @@ import re
 from typing import List, Dict, Any
 
 def parse_content(content: str) -> List[Dict[str, str]]:
-    '''Parse content with special $@type@$ and $@type_end@$ tags into structured blocks.'''
+    '''parse content with special $@type@$ and $@type_end@$ tags into structured blocks.'''
     # RE for boundaries of each block
     pattern = r'\$@(\w+)@\$(.*?)\$@\1_end@\$'
     
@@ -52,6 +52,10 @@ def combine_related_blocks(blocks: List[Dict[str, str]]) -> List[Dict[str, str]]
     return combined_blocks
 
 def create_chunks(blocks: List[Dict[str, str]], max_chunk_size: int = 750) -> List[str]:
+    '''
+    create chunks from content blocks given, with a max chunk size
+    max chunk size is ignored if a single block exceeds this size
+    '''
     chunks = []
     current_chunk = []
     current_size = 0
